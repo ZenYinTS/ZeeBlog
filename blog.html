@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
+    <title>博客详情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="./static/css/me.css">
+</head>
+
+<body>
+    <!--导航-->
+    <nav class="ui inverted segment attached m-padded-tb-mini m-opacity-mini">
+        <!-- 设计logo，太靠前，将菜单容器放入容器内 -->
+        <div class="ui container">
+            <div class="ui inverted secondary menu stackable">
+                <!-- 指定为菜单项item,m-item无意义，为了后续获取 -->
+                <h2 class="ui teal header item">ZeeCodeBlog</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+                <!-- 搜索框，使其靠右 -->
+                <div class="m-item right item m-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--menu toggle没意义，类似于加id，方便script获取样式-->
+        <a href="#" class="ui menu toggle black icon button m-top-right m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!-- 中间内容 -->
+    <div class="m-padded-tb-large m-opacity">
+        <div class="ui m-container">
+            <!-- 头部 -->
+            <div class="ui segment top attached">
+                <div class="ui horizontal link list">
+                    <div class="item">
+                        <!--头像-->
+                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image" />
+                        <div class="content">
+                            <a href="#" class="header">臻尹</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="calendar icon"></i> 2017-10-01
+                    </div>
+                    <div class="item">
+                        <i class="eye icon"></i> 2342
+                    </div>
+                </div>
+            </div>
+            <!-- 图片区域 -->
+            <div class="ui attached segment">
+                <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image" />
+            </div>
+            <!-- 内容 -->
+            <div class="ui attached segment m-padded-large">
+                <!-- 去掉边线basic -->
+                <div class="ui segment right aligned basic">
+                    <div class="ui orange basic label">原创</div>
+                </div>
+                <h2 class="ui header center aligned">堪比科幻大片！优酷特效广告、互动视频技术大揭秘</h2>
+                <div id="content" class="m-padded-lr-responsive m-padded-tb-large">
+                    <p>
+                        大家都看过科幻电影吧，像《头号玩家》、《美国队长》、《银河护卫队》，这些科幻电影中都出现过AR/VR的镜头。
+                        以《头号玩家》为例，主角来到博物馆，能够实时的、多角度地去浏览资料，这里就用到了volumetric video技术，
+                        它是一种VR技术，就是在被摄物周围放一圈摄像头，采集的视频经过合成加工就可以无缝地切换观看了。与电影中的
+                        拍摄特技不同，随着5G和AI的加速落地，在视频生产和播放环节，越来越多的融入AR、VR的相关技术。可以说今天的
+                        科幻电影是明天的科学事实。
+            
+                        那么优酷在这一领域是如何实践的呢？且看阿里文娱高级算法专家方如在GMICLive 2020 智慧文娱技术专场中的分享，
+                        主要从四方面展开：
+                        一是XR与视频的结合策略；
+                        二是XR-Video技术特点；
+                        三是XR-Video智能创意平台及其应用；
+                        四是XR-Video未来展望。
+                        XR与视频的结合策略
+                        什么是XR？XR包括VR、AR和MR
+                    </p>
+                </div>
+                <!-- 标签 -->
+                <div class="m-padded-lr-responsive">
+                    <div class="ui label left pointing teal basic">标签</div>
+                </div>
+                <!-- 赞赏 -->
+                <div class="ui center aligned basic segment">
+                <button id="btnPay" class="ui red basic circular  button">赞赏</button>
+                <div class="ui payQR flowing popup transition hidden">
+                    <div class="ui images" style="font-size: inherit !important;">
+                        <div class="image">
+                            <img src="./static/images/alipay.jpg" alt="" class="ui rounded bordered image"
+                                style="width: 120px;height: 120px;" />
+                            <div>支付宝</div>
+                        </div>
+                        <div class="image">
+                            <img src="./static/images/wechatPay.jpg" alt="" class="ui rounded bordered image"
+                                style="width: 120px;height: 120px;" />
+                            <div>微信</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- 博客信息 -->
+            <div class="ui attached violet positive message">
+               <div class="ui grid middle aligned">
+                   <div class="eleven wide column">
+                        <ul class="list">
+                            <li>作者：臻尹（联系作者）</li>
+                            <li>发表时间：2017-10-02 09:08</li>
+                            <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
+                            <li>公众号转载：请在文末添加作者公众号二维码</li>
+                        </ul>
+                   </div>
+                   <div class="five wide column">
+                    <img src="./static/images/wechat.jpg" alt="" class="ui right floated rounded image" style="width: 110px;">
+                   </div>
+               </div>
+            </div>
+            <!-- 留言区域列表 -->
+            <div class="ui attached segment">
+                <div class="ui violet segment">
+                    <div class="ui threaded comments">
+                        <h3 class="ui dividing header">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">评论</font>
+                            </font>
+                        </h3>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="https://picsum.photos/id/1/100/100">
+                            </a>
+                            <div class="content">
+                                <a class="author">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">马特</font>
+                                    </font>
+                                </a>
+                                <div class="metadata">
+                                    <span class="date">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">今天下午5:42</font>
+                                        </font>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            多么艺术！
+                                        </font>
+                                    </font>
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">回复</font>
+                                        </font>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="https://picsum.photos/id/1/100/100">
+                            </a>
+                            <div class="content">
+                                <a class="author">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">傅</font>
+                                    </font>
+                                </a>
+                                <div class="metadata">
+                                    <span class="date">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">昨天上午12:30</font>
+                                        </font>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">这对我的研究非常有用。</font>
+                                            <font style="vertical-align: inherit;">也谢谢！</font>
+                                        </font>
+                                    </p>
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">回复</font>
+                                        </font>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="comments">
+                                <div class="comment">
+                                    <a class="avatar">
+                                        <img src="https://picsum.photos/id/1/100/100">
+                                    </a>
+                                    <div class="content">
+                                        <a class="author">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">珍妮·赫斯（Jenny Hess）</font>
+                                            </font>
+                                        </a>
+                                        <div class="metadata">
+                                            <span class="date">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">现在</font>
+                                                </font>
+                                            </span>
+                                        </div>
+                                        <div class="text">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">
+                                                    艾略特，你总是很正确:)
+                                                </font>
+                                            </font>
+                                        </div>
+                                        <div class="actions">
+                                            <a class="reply">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">回复</font>
+                                                </font>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="https://picsum.photos/id/1/100/100">
+                            </a>
+                            <div class="content">
+                                <a class="author">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">乔·亨德森</font>
+                                    </font>
+                                </a>
+                                <div class="metadata">
+                                    <span class="date">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">5天前</font>
+                                        </font>
+                                    </span>
+                                </div>
+                                <div class="text">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            杜德，太棒了 </font>
+                                        <font style="vertical-align: inherit;">非常感谢
+                                        </font>
+                                    </font>
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">回复</font>
+                                        </font>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 回复区域 -->
+                        <div class="ui form">
+                            <div class="field">
+                                <textarea name="content" placeholder="输入评论内容..."></textarea>
+                            </div>
+                            <div class="fields">
+                                <div class="field m-mobile-wide m-margin-bottom-mini">
+                                    <div class="ui left icon input">
+                                        <i class="user icon"></i>
+                                        <input type="text" name="nickname" placeholder="昵称">
+                                    </div>
+                                </div>
+                                <div class="field m-mobile-wide m-margin-bottom-mini">
+                                    <div class="ui left icon input">
+                                        <i class="mail icon"></i>
+                                        <input type="text" name="mail" placeholder="邮箱">
+                                    </div>
+                                </div>
+                                <div class="field m-mobile-wide m-margin-bottom-mini">
+                                    <button class="ui violet button m-mobile-wide"><i class="edit icon"></i>发布</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- 底部footer -->
+    <footer class="ui inverted vertical segment m-padded-tb-massive m-opacity-mini">
+        <div class="ui center aligned container">
+            <!--进行居中-->
+            <div class="ui inverted divided stackable grid">
+                <!-- wide为填满 -->
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="./static/images/wechat.jpg" class="ui rounded image" alt=""
+                                style="width: 110px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-lined">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事（User Story)</a>
+                        <a href="#" class="item">用户故事（User Story)</a>
+                        <a href="#" class="item">用户故事（User Story)</a>
+                        <a href="#" class="item">用户故事（User Story)</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-lined">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email：383641115@qq.com</a>
+                        <a href="#" class="item">QQ：383641115</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">ZeeCodeBlog</h4>
+                    <div class="ui inverted link list">
+                        <p class="m-text-thin m-text-lined m-opacity-mini">这是我的个人博客，会分享关于编程、学习、思考的任何内容，希望可以给来到这的人有所帮助。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-lined m-opacity-tiny">Copyright © 2020 ZeeCodeBlog Designed by ZenYinTS</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <script>
+        $('.menu.toggle').click(function(){
+            $('.m-item').toggleClass('m-mobile-hide');
+        })
+        $("#btnPay").popup({
+            popup:$(".payQR"),     //获取到要展示的组件
+            on :'click',
+            position:'bottom center'
+        })
+    </script>
+</body>
+
+</html>
